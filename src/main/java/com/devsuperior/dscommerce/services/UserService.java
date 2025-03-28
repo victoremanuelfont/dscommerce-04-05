@@ -6,6 +6,7 @@ import com.devsuperior.dscommerce.entities.User;
 import com.devsuperior.dscommerce.projections.UserDetailsProjection;
 import com.devsuperior.dscommerce.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -52,6 +53,7 @@ public class UserService implements UserDetailsService {
         }
 
     }
+
 
     @Transactional(readOnly = true)
     public UserDTO getMe(){
